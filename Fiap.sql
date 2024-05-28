@@ -5,8 +5,8 @@ CREATE TABLE T_GS_CONTATO (
     telefone VARCHAR2(20),
     idEndereco VARCHAR2(50),
     idOng VARCHAR2(50),
-    FOREIGN KEY (idEndereco) REFERENCES Endereco(idEndereco),
-    FOREIGN KEY (idOng) REFERENCES Ong(idOng)
+    FOREIGN KEY (idEndereco) REFERENCES T_GS_ENDERECO(idEndereco),
+    FOREIGN KEY (idOng) REFERENCES T_GS_ONG(idOng)
 );
 
 
