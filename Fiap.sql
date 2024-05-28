@@ -1,3 +1,7 @@
+--====================================================================;
+-- CREATE TABLES
+--====================================================================;
+
 CREATE TABLE T_GS_CONTATO (
     idContato VARCHAR2(50) PRIMARY KEY,
     nome VARCHAR2(100),
@@ -5,8 +9,8 @@ CREATE TABLE T_GS_CONTATO (
     telefone VARCHAR2(20),
     idEndereco VARCHAR2(50),
     idOng VARCHAR2(50),
-    FOREIGN KEY (idEndereco) REFERENCES Endereco(idEndereco),
-    FOREIGN KEY (idOng) REFERENCES Ong(idOng)
+    FOREIGN KEY (idEndereco) REFERENCES T_GS_ENDERECO(idEndereco),
+    FOREIGN KEY (idOng) REFERENCES T_GS_ONG(idOng)
 );
 
 
@@ -23,8 +27,25 @@ CREATE TABLE T_GS_ONG (
 );
 
 
+
+
+
+
+--====================================================================;
+-- DROP TABLES
+--====================================================================;
+
 DROP TABLE T_GS_CONTATO;
 DROP TABLE T_GS_ENDERECO ;
 DROP TABLE T_GS_ONG;
 
+
+
+
+
+
+
+--====================================================================;
+-- SELECT E RELATÓRIOS
+--====================================================================;
 SELECT * FROM T_GS_CONTATO;
