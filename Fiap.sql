@@ -1,3 +1,4 @@
+-- Tabela de Contato
 CREATE TABLE T_GS_CONTATO (
     idContato VARCHAR2(50) PRIMARY KEY,
     nome VARCHAR2(100),
@@ -9,7 +10,7 @@ CREATE TABLE T_GS_CONTATO (
     FOREIGN KEY (idOng) REFERENCES T_GS_ONG(idOng)
 );
 
-
+-- Tabela de Endereço
 CREATE TABLE T_GS_ENDERECO (
     idEndereco VARCHAR2(50) PRIMARY KEY,
     cep VARCHAR2(10),
@@ -20,6 +21,7 @@ CREATE TABLE T_GS_ENDERECO (
     uf VARCHAR2(2)
 );
 
+-- Tabela de ONG
 CREATE TABLE T_GS_ONG (
     idOng VARCHAR2(50) PRIMARY KEY,
     nome VARCHAR2(100),
@@ -77,14 +79,58 @@ VALUES ('Instituto Argonauta para Conservação Costeira e Marinha', 'Brasil', 'Sã
 INSERT INTO T_GS_ONG ( nome, pais, estado, areaAtuacao)
 VALUES ('Instituto EcoFaxina', 'Brasil', 'São Paulo', ' Limpeza de praias e rios, conscientização ambiental e reciclagem');
 
+-- Tabela de Praias
+CREATE TABLE T_GS_PRAIAS (
+    Id_praia VARCHAR2(50) PRIMARY KEY,
+    nome VARCHAR2(100),
+    pais VARCHAR2(50),
+    estado VARCHAR2(50),
+    st_banho VARCHAR2(50)
+);
 
+-- Tabela de Plástico Produzido
+CREATE TABLE T_GS_Plastico_Produzido (
+    id_ano VARCHAR2(50) PRIMARY KEY,
+    ano NUMBER,
+    producao_anual NUMBER
+);
+
+-- Tabela de Qualidade do Ar e Água das Cidades
+CREATE TABLE T_GS_QUALIDADE_AR_AGUA_CIDADE (
+    id_cidade VARCHAR2(50) PRIMARY KEY,
+    cidade VARCHAR2(100),
+    regiao VARCHAR2(50),
+    entidade VARCHAR2(100),
+    qualidade_do_ar VARCHAR2(50),
+    poluicao_agua VARCHAR2(50)
+);
+
+-- Remover uma ONG específica
+DELETE FROM T_GS_ONG WHERE idOng = 'ONG00008';
+
+-- Remover tabelas
 DROP TABLE T_GS_CONTATO;
-DROP TABLE T_GS_ENDERECO ;
+DROP TABLE T_GS_ENDERECO;
 DROP TABLE T_GS_ONG;
+DROP TABLE T_GS_PRAIAS;
+DROP TABLE T_GS_Plastico_Produzido;
+DROP TABLE T_GS_QUALIDADE_AR_AGUA_CIDADE;
 
-DELETE FROM T_GS_ONG
-WHERE idOng = 'ONG00008';
-
-SELECT * FROM T_GS_CONTATO;
-SELECT * FROM T_GS_ENDERECO;
+-- Consultar todas as ONGs
 SELECT * FROM T_GS_ONG;
+
+-- Consultar todos os contatos
+SELECT * FROM T_GS_CONTATO;
+
+-- Consultar todos os endereços
+SELECT * FROM T_GS_ENDERECO;
+
+-- Consultar todas as praias
+SELECT * FROM T_GS_PRAIAS;
+
+-- Consultar produção de plástico
+SELECT * FROM T_GS_Plastico_Produzido;
+
+-- Consultar qualidade do ar e água das cidades
+SELECT * FROM T_GS_QUALIDADE_AR_AGUA_CIDADE;
+
