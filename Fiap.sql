@@ -87,7 +87,7 @@ INSERT INTO T_GS_ONG (nome, pais, estado, areaAtuacao)
 VALUES ('Associação MarBrasil', 'Brasil', 'Paraná', 'Conservação marinha, proteção de áreas costeiras e educação ambiental');
 
 INSERT INTO T_GS_ONG (nome, pais, estado, areaAtuacao)
-VALUES ('Instituto Meros do Brasil', 'Brasil', 'Bahia', 'Conservação das tartarugas marinhas');
+VALUES ('Instituto Mero s do Brasil', 'Brasil', 'Bahia', 'Conservação das tartarugas marinhas');
 
 INSERT INTO T_GS_ONG (nome, pais, estado, areaAtuacao)
 VALUES ('Instituto Meros do Brasil', 'Brasil', 'Rio de Janeiro', 'Conservação dos meros (peixes grandes), pesquisa científica e educação ambiental');
