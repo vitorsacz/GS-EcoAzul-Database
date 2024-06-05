@@ -160,6 +160,18 @@ INSERT INTO T_GS_CONTATO (idContato, email, telefone)VALUES ('8', 'contato@iousp
 INSERT INTO T_GS_CONTATO (idContato, email, telefone)VALUES ('9', 'contato@tamar.org.br', '(71) 98765-4321');
 INSERT INTO T_GS_CONTATO (idContato, email, telefone)VALUES ('10', 'contato@coralvivo.org.br', '(71) 98765-4321');
 
+-- Inserindo dados na Tabela Auxiliar de Contato das ONGs
+INSERT INTO T_GS_CONTATO_ONG (idContatoOng, idOng, idContato) 
+VALUES (1, '1', '1');
+INSERT INTO T_GS_CONTATO_ONG (idContatoOng, idOng, idContato) 
+VALUES (2, '2', '2');
+INSERT INTO T_GS_CONTATO_ONG (idContatoOng, idOng, idContato) 
+VALUES (3, '3', '3');
+INSERT INTO T_GS_CONTATO_ONG (idContatoOng, idOng, idContato) 
+VALUES (4, '4', '4');
+INSERT INTO T_GS_CONTATO_ONG (idContatoOng, idOng, idContato) 
+VALUES (5, '5', '5');
+
 
 
 -- Inserir dados na tabela T_GS_PRAIAS
