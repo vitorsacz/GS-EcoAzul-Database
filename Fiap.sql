@@ -15,6 +15,13 @@ CREATE TABLE T_GS_ENDERECO (
     estado VARCHAR2(50) NOT NULL
 );
 
+ALTER TABLE T_GS_ENDERECO
+ADD uf VARCHAR2(2);
+
+ALTER TABLE T_GS_ENDERECO
+RENAME COLUMN estado TO localidade;
+
+
 -- Tabela de ONG
 CREATE TABLE T_GS_ONG (
     idOng VARCHAR2(50) PRIMARY KEY,
@@ -135,17 +142,18 @@ INSERT INTO T_GS_ONG (idOng, nome, pais, estado, areaAtuacao, materialColetado, 
 
 
 -- Inserir dados na tabela T_GS_ENDERECO
+INSERT INTO T_GS_ENDERECO (idEndereco, cep, lougradouro, complemento, bairro, localidade, uf) VALUES ('1', '20001-2070', '1300 19th Street NW', 'Casa', 'Dupont Circle', 'Washington', 'DC');
+INSERT INTO T_GS_ENDERECO (idEndereco, cep, lougradouro, complemento, bairro, localidade, uf) VALUES ('2', '92024', '942 S. Coast Highway 101', 'Casa', 'Encinitas', 'California', 'CA');
+INSERT INTO T_GS_ENDERECO (idEndereco, cep, lougradouro, complemento, bairro, localidade, uf) VALUES ('3', '3011 ND', 'Conradstraat 38', 'Casa', 'Rotterdam', 'Holanda do Sul', 'ZH');
+INSERT INTO T_GS_ENDERECO (idEndereco, cep, lougradouro, complemento, bairro, localidade, uf) VALUES ('4', '90404', '1314 7th Street', 'Suite 290', 'Santa Monica', 'California', 'CA');
+INSERT INTO T_GS_ENDERECO (idEndereco, cep, lougradouro, complemento, bairro, localidade, uf) VALUES ('5', '90401', '502 Colorado Avenue', 'Suite 303', 'Santa Monica', 'California', 'CA');
+INSERT INTO T_GS_ENDERECO (idEndereco, cep, lougradouro, complemento, bairro, localidade, uf) VALUES ('6', '22020-040', 'Rua Dr. Rubens Gomes Bueno, 6 - Urca', 'Casa', 'Rio de Janeiro', 'Rio de Janeiro', 'RJ');
+INSERT INTO T_GS_ENDERECO (idEndereco, cep, lougradouro, complemento, bairro, localidade, uf) VALUES ('7', '22410-005', 'Av. Borges de Medeiros, 1426 - Lagoa', 'Casa', 'Rio de Janeiro', 'Rio de Janeiro', 'RJ');
+INSERT INTO T_GS_ENDERECO (idEndereco, cep, lougradouro, complemento, bairro, localidade, uf) VALUES ('8', '05508-120', 'Praça do Oceanográfico, 191', 'Casa', 'Butantã', 'São Paulo', 'SP');
+INSERT INTO T_GS_ENDERECO (idEndereco, cep, lougradouro, complemento, bairro, localidade, uf) VALUES ('9', '45931-000', 'Praça Dr. Odilon Junqueira, 259', 'Casa', 'Praia do Forte', 'Bahia', 'BA');
+INSERT INTO T_GS_ENDERECO (idEndereco, cep, lougradouro, complemento, bairro, localidade, uf) VALUES ('10', '45931-000', 'Av. Antônio Tupy Pinheiro', 'S/N', 'Praia do Forte', 'Bahia', 'BA');
 
-INSERT INTO T_GS_ENDERECO (idEndereco, cep, lougradouro, complemento, bairro, estado)VALUES ('1', '20001-2070', '1300 19th Street NW', 'Casa', 'Dupont Circle', 'Washington');
-INSERT INTO T_GS_ENDERECO (idEndereco, cep, lougradouro, complemento, bairro, estado)VALUES ('2', '92024', '942 S. Coast Highway 101', 'Casa', 'Encinitas', 'California');
-INSERT INTO T_GS_ENDERECO (idEndereco, cep, lougradouro, complemento, bairro, estado)VALUES ('3', '3011 ND', 'Conradstraat 38', 'Casa', 'Rotterdam', 'Holanda do Sul');
-INSERT INTO T_GS_ENDERECO (idEndereco, cep, lougradouro, complemento, bairro, estado)VALUES ('4', '90404', '1314 7th Street', 'Suite 290', 'Santa Monica', 'California');
-INSERT INTO T_GS_ENDERECO (idEndereco, cep, lougradouro, complemento, bairro, estado)VALUES ('5', '90401', '502 Colorado Avenue', 'Suite 303', 'Santa Monica', 'California');
-INSERT INTO T_GS_ENDERECO (idEndereco, cep, lougradouro, complemento, bairro, estado)VALUES ('6', '22020-040', 'Rua Dr. Rubens Gomes Bueno, 6 - Urca', 'Casa', 'Rio de Janeiro', 'Rio de Janeiro');
-INSERT INTO T_GS_ENDERECO (idEndereco, cep, lougradouro, complemento, bairro, estado)VALUES ('7', '22410-005', 'Av. Borges de Medeiros, 1426 - Lagoa', 'Casa', 'Rio de Janeiro', 'Rio de Janeiro');
-INSERT INTO T_GS_ENDERECO (idEndereco, cep, lougradouro, complemento, bairro, estado)VALUES ('8', '05508-120', 'Praça do Oceanográfico, 191', 'Casa', 'Butantã', 'São Paulo');
-INSERT INTO T_GS_ENDERECO (idEndereco, cep, lougradouro, complemento, bairro, estado)VALUES ('9', '45931-000', 'Praça Dr. Odilon Junqueira, 259', 'Casa', 'Praia do Forte', 'Bahia');
-INSERT INTO T_GS_ENDERECO (idEndereco, cep, lougradouro, complemento, bairro, estado)VALUES ('10', '45931-000', 'Av. Antônio Tupy Pinheiro', 'S/N', 'Praia do Forte', 'Bahia');
+
 
 
 -- inserir dados na tabela T_GS_CONTATO
@@ -209,6 +217,8 @@ SELECT * FROM T_GS_Plastico_Produzido;
 SELECT * FROM T_GS_QUALIDADE_AR_AGUA_CIDADE;
 
 DELETE FROM T_GS_ONG ;
+
+DELETE FROM T_GS_ENDERECO;
 
 
 
